@@ -13,17 +13,20 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.toocrudeoil.com'),
   title: {
-    default: 'TOO Crude Oil — Global Oil & Gas Supplier | Crude Oil LLP',
+    default: 'TOO Crude Oil — Global Crude Oil Supplier | Crude Oil LLP',
     template: '%s | TOO Crude Oil',
   },
   description:
-    'Crude Oil LLP (TOO Crude Oil) — Kazakhstan-based international oil & gas supplier. FOB trading of REBCO, Diesel EN590, Jet Fuel A1, LNG and Gasoline from terminals in Rotterdam, Houston, Jurong and Fujairah.',
+    'Crude Oil LLP (TOO Crude Oil) — verified global crude oil supplier and petroleum exporter. CIF and FOB trading of REBCO, Diesel EN590, Jet Fuel A1, LNG from Rotterdam, Houston, Jurong and Fujairah. Direct refinery allocation. SGS inspected.',
   keywords: [
-    'crude oil supplier', 'Kazakhstan oil company', 'REBCO crude oil', 'Diesel EN590',
-    'Jet Fuel A1', 'LNG supplier', 'FOB oil trading', 'Rotterdam oil terminal',
-    'Houston energy terminal', 'Jurong fuel storage', 'Fujairah bunker fuel',
-    'TOO Crude Oil', 'Crude Oil LLP', 'oil and gas Kazakhstan', 'petroleum trading',
-    'oil FOB trading', 'energy supplier Central Asia', 'crude oil Almaty',
+    'crude oil supplier', 'global crude oil supplier', 'crude oil exporter', 'petroleum products supplier',
+    'oil and gas trading company', 'wholesale petroleum supplier', 'direct refinery supplier',
+    'fuel supplier worldwide', 'energy commodity supplier', 'bulk fuel exporter', 'petroleum exporter',
+    'verified oil supplier', 'international fuel supplier', 'global petroleum trading',
+    'CIF crude oil supplier', 'EN590 supplier Rotterdam', 'Jet A1 CIF supplier',
+    'refinery allocation supplier', 'fuel exporter worldwide', 'crude oil supplier Houston',
+    'Fujairah fuel allocation', 'global petroleum supplier', 'wholesale diesel supplier',
+    'TOO Crude Oil', 'Crude Oil LLP', 'REBCO crude oil', 'Kazakhstan oil company',
   ],
   alternates: { canonical: 'https://www.toocrudeoil.com' },
   openGraph: {
@@ -117,9 +120,136 @@ const jsonLd = [
     '@id': 'https://www.toocrudeoil.com/#website',
     url: 'https://www.toocrudeoil.com',
     name: 'TOO Crude Oil',
-    description: 'Kazakhstan-based international oil & gas supplier — FOB trading from four global terminals.',
+    description: 'Kazakhstan-based international oil & gas supplier — CIF and FOB trading from four global terminals.',
     publisher: { '@id': 'https://www.toocrudeoil.com/#organization' },
     inLanguage: 'en',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Petroleum Products by Crude Oil LLP',
+    description: 'Full product range supplied by TOO Crude Oil on FOB and CIF terms from Rotterdam, Houston, Jurong, and Fujairah.',
+    itemListElement: [
+      {
+        '@type': 'ListItem', position: 1,
+        item: {
+          '@type': 'Product', name: 'EN590 Ultra-Low Sulphur Diesel',
+          description: 'EN 590:2013+A1:2017 compliant diesel, ≤10 PPM sulphur. FOB Rotterdam and CIF worldwide.',
+          url: 'https://www.toocrudeoil.com/en590-supplier',
+          brand: { '@type': 'Brand', name: 'Crude Oil LLP' },
+          offers: { '@type': 'Offer', areaServed: 'Worldwide', priceCurrency: 'USD', seller: { '@type': 'Organization', name: 'Crude Oil LLP' } },
+        },
+      },
+      {
+        '@type': 'ListItem', position: 2,
+        item: {
+          '@type': 'Product', name: 'Jet Fuel A1 Aviation Turbine Fuel',
+          description: 'ASTM D1655 / DEF STAN 91-091 Jet A1. CIF from Fujairah and Rotterdam.',
+          url: 'https://www.toocrudeoil.com/jet-a1-supplier',
+          brand: { '@type': 'Brand', name: 'Crude Oil LLP' },
+          offers: { '@type': 'Offer', areaServed: 'Worldwide', priceCurrency: 'USD', seller: { '@type': 'Organization', name: 'Crude Oil LLP' } },
+        },
+      },
+      {
+        '@type': 'ListItem', position: 3,
+        item: {
+          '@type': 'Product', name: 'REBCO Crude Oil',
+          description: 'Russian Export Blend Crude Oil, 31–33° API, ~1.3% sulphur. FOB Houston and Rotterdam.',
+          url: 'https://www.toocrudeoil.com/crude-oil-supplier',
+          brand: { '@type': 'Brand', name: 'Crude Oil LLP' },
+          offers: { '@type': 'Offer', areaServed: 'Worldwide', priceCurrency: 'USD', seller: { '@type': 'Organization', name: 'Crude Oil LLP' } },
+        },
+      },
+      {
+        '@type': 'ListItem', position: 4,
+        item: {
+          '@type': 'Product', name: 'LNG — Liquefied Natural Gas',
+          description: 'LNG from Kazakhstan fields. Long-term off-take and spot supply.',
+          brand: { '@type': 'Brand', name: 'Crude Oil LLP' },
+          offers: { '@type': 'Offer', areaServed: 'Worldwide', priceCurrency: 'USD', seller: { '@type': 'Organization', name: 'Crude Oil LLP' } },
+        },
+      },
+      {
+        '@type': 'ListItem', position: 5,
+        item: {
+          '@type': 'Product', name: 'Gasoline RON 92/95',
+          description: 'EN 228 compliant unleaded motor gasoline. FOB and CIF supply.',
+          brand: { '@type': 'Brand', name: 'Crude Oil LLP' },
+          offers: { '@type': 'Offer', areaServed: 'Worldwide', priceCurrency: 'USD', seller: { '@type': 'Organization', name: 'Crude Oil LLP' } },
+        },
+      },
+      {
+        '@type': 'ListItem', position: 6,
+        item: {
+          '@type': 'Product', name: 'Bunker Fuel IFO 180/380 & VLSFO',
+          description: 'Marine fuel oil, IMO 2020 compliant VLSFO. Bunkering at Rotterdam, Fujairah, and Singapore.',
+          brand: { '@type': 'Brand', name: 'Crude Oil LLP' },
+          offers: { '@type': 'Offer', areaServed: 'Worldwide', priceCurrency: 'USD', seller: { '@type': 'Organization', name: 'Crude Oil LLP' } },
+        },
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What petroleum products does TOO Crude Oil supply?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Crude Oil LLP (TOO Crude Oil) supplies REBCO crude oil, Diesel EN590 (ULSD 10 PPM), Jet Fuel A1 (ASTM D1655), LNG, Gasoline RON 92/95, and Bunker Fuel IFO 180/380 and VLSFO on FOB and CIF terms from Rotterdam, Houston, Jurong (Singapore), and Fujairah (UAE).',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What delivery terms does TOO Crude Oil offer?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We offer FOB (Free On Board), CIF (Cost, Insurance & Freight), CFR (Cost & Freight), TTO (Tank-to-Tank Operations), and TTT (Tank-to-Tanker) delivery. CIF delivery is available from all four of our terminals to any major discharge port worldwide.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Which ports does TOO Crude Oil operate from?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'TOO Crude Oil has terminal positions at four strategic global ports: Port of Rotterdam (Netherlands) — 2.8M m³; Port of Houston (Texas, USA) — 1.6M m³; Jurong Island (Singapore) — 1.2M m³; Port of Fujairah (UAE) — 1.4M m³. Total storage: over 7 million m³.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How is product quality verified?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'All cargoes are independently inspected by SGS, Intertek, or Bureau Veritas at the load port before shipment. We issue a Certificate of Quality (CoQ), Certificate of Quantity, and Certificate of Origin with every cargo. SGS certificates are accepted by all major trade finance banks for letter-of-credit processing.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the minimum order quantity for crude oil or petroleum products?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Minimum cargo sizes: Crude oil — 80,000 MT (Aframax); EN590 diesel — 25,000 MT; Jet A1 — 5,000 MT (spot); Gasoline — 20,000 MT; Bunker fuel — 5,000 MT. Smaller parcels may be available via barge at Rotterdam ARA.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does TOO Crude Oil provide CIF petroleum supply?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. CIF (Cost, Insurance & Freight) delivery is available for all products from Rotterdam, Houston, Fujairah, and Jurong terminals. We arrange ocean freight with vetted tanker operators, provide marine cargo insurance, and handle all export documentation. CIF is the preferred option for buyers who want a door-to-port supply solution.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What payment terms are accepted?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We accept confirmed, irrevocable Letters of Credit (LC at sight) from first-class international banks, Standby Letters of Credit (SBLC), and for established counterparties, MT103 wire transfers. All terms are set out in a formal Sales and Purchase Agreement (SPA).',
+        },
+      },
+    ],
   },
 ];
 

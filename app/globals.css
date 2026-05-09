@@ -239,7 +239,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ─── Prevent global overflow ─── */
-section, header, footer { max-width: 100vw; overflow-x: hidden; }
+section, footer { max-width: 100vw; overflow-x: hidden; }
+/* header must NOT have overflow-x:hidden — it clips the navbar dropdown */
+header { max-width: 100vw; }
 
 /* ─── Navbar responsive (replaces Tailwind lg: classes) ─── */
 .nav-topbar        { display: flex; }
