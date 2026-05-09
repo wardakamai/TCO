@@ -101,18 +101,6 @@ const jsonLd = [
       },
     ],
     sameAs: ['https://www.linkedin.com/company/crude-oil-llp'],
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Petroleum Products & Supply Services',
-      itemListElement: [
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'REBCO Crude Oil Supply', description: 'Russian Export Blend Crude Oil, medium gravity, FOB and CIF terms' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Diesel Fuel EN590 Supply', description: 'Ultra-Low Sulphur Diesel 10 PPM, EN 590:2013+A1:2017' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Aviation Jet Fuel A1 Supply', description: 'ASTM D1655 / DEF STAN 91-091 kerosene-type turbine fuel' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Liquefied Natural Gas Supply', description: 'LNG from Kazakhstan gas fields, long-term and spot supply' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Gasoline RON 92/95 Supply', description: 'Unleaded motor gasoline, EN 228 compliant' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Bunker Fuel IFO 180/380 Supply', description: 'Marine fuel oil, IMO 2020 compliant VLSFO' } },
-      ],
-    },
   },
   {
     '@context': 'https://schema.org',
