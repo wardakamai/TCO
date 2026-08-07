@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
     // built-in error page under React 19 — child_process workers, capped to 1,
     // is the stable option here.)
     cpus: 1,
+    // Bypasses the root-layout-wrapped internal /_not-found route, which
+    // crashes on this hosting environment (see app/global-not-found.tsx).
+    globalNotFound: true,
   },
   async redirects() {
     return [
