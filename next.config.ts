@@ -4,6 +4,13 @@ import createMDX from '@next/mdx';
 const nextConfig: NextConfig = {
   output: 'standalone',
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  experimental: {
+    // Shared hosting (CloudLinux LVE) enforces a low per-account process limit;
+    // constrain the build to one worker running as an in-process thread rather
+    // than spawning separate OS processes, to avoid EAGAIN during `next build`.
+    cpus: 1,
+    workerThreads: true,
+  },
   async redirects() {
     return [
       // Old WordPress URL redirects → new Next.js equivalents
