@@ -1,10 +1,10 @@
 'use client';
 
 export default function GlobalError({
-  unstable_retry,
+  reset,
 }: {
   error: Error & { digest?: string };
-  unstable_retry: () => void;
+  reset: () => void;
 }) {
   return (
     <html lang="en">
@@ -14,7 +14,7 @@ export default function GlobalError({
             <h1 style={{ fontSize: '1.75rem', marginBottom: '1rem' }}>Something went wrong</h1>
             <p style={{ color: '#8A7A65', marginBottom: '1.5rem' }}>Please try again, or return to the homepage.</p>
             <button
-              onClick={() => unstable_retry()}
+              onClick={() => reset()}
               style={{ padding: '0.75rem 2rem', background: '#B8860B', color: '#19140D', fontWeight: 700, fontSize: '14px', borderRadius: '8px', border: 'none', cursor: 'pointer' }}
             >
               Try Again
