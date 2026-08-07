@@ -1,8 +1,30 @@
 import type { MetadataRoute } from 'next';
+import fs from 'fs';
+import path from 'path';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const BLOG_DIR = path.join(process.cwd(), 'content/blog');
+
+async function getBlogEntries(base: string): Promise<MetadataRoute.Sitemap> {
+  const files = fs.readdirSync(BLOG_DIR).filter(f => f.endsWith('.mdx'));
+  const entries = await Promise.all(
+    files.map(async f => {
+      const slug = f.replace(/\.mdx$/, '');
+      const { metadata } = await import(`@/content/blog/${slug}.mdx`);
+      return {
+        url: `${base}/blog/${slug}`,
+        lastModified: new Date(metadata.date),
+        changeFrequency: 'yearly' as const,
+        priority: 0.7,
+      };
+    })
+  );
+  return entries;
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = 'https://www.toocrudeoil.com';
   const now = new Date('2026-08-07');
+  const blogEntries = await getBlogEntries(base);
   return [
     { url: base,                                    lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
     { url: `${base}/storage`,                       lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
@@ -29,5 +51,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/about`,                         lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/sustainability`,                lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${base}/contact`,                       lastModified: now, changeFrequency: 'yearly',  priority: 0.65 },
+    /* Blog */
+    { url: `${base}/blog`,                          lastModified: now, changeFrequency: 'weekly',  priority: 0.75 },
+    ...blogEntries,
   ];
 }

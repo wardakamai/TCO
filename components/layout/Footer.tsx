@@ -10,6 +10,7 @@ const navLinks = [
   { href: '/storage', label: 'Storage' },
   { href: '/products', label: 'Products' },
   { href: '/sustainability', label: 'Sustainability' },
+  { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
 ];
 
