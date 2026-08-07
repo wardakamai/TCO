@@ -36,6 +36,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# cPanel Node.js Selector runtime files (Passenger-managed, server-only)
+/tmp/
+stderr.log
+stdout.log
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
