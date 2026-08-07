@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://www.toocrudeoil.com';
-  const now = new Date('2026-05-09');
+  const now = new Date('2026-08-07');
   return [
     { url: base,                                    lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
     { url: `${base}/storage`,                       lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
