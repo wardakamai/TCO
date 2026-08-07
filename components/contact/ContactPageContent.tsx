@@ -37,8 +37,7 @@ export default function ContactPageContent() {
     setLoading(true);
     setError(false);
     try {
-      /* Replace YOUR_FORMSPREE_ID with your Formspree form ID (free at formspree.io) */
-      const res = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
+      const res = await fetch('https://formspree.io/f/mqpzawky', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
