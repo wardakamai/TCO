@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - /bin/bash -c "source /home/toocakuj/nodevenv/toocrudeoil/20/bin/activate && cd /home/toocakuj/repositories/TCO && npm install && npm run build"
+    - /bin/bash -c "cp -R /home/toocakuj/repositories/TCO/.next/standalone/. /home/toocakuj/toocrudeoil/"
+    - /bin/bash -c "mkdir -p /home/toocakuj/toocrudeoil/.next/static && cp -R /home/toocakuj/repositories/TCO/.next/static/. /home/toocakuj/toocrudeoil/.next/static/"
+    - /bin/bash -c "mkdir -p /home/toocakuj/toocrudeoil/public && cp -R /home/toocakuj/repositories/TCO/public/. /home/toocakuj/toocrudeoil/public/"
+    - /bin/bash -c "mkdir -p /home/toocakuj/toocrudeoil/tmp && touch /home/toocakuj/toocrudeoil/tmp/restart.txt"
