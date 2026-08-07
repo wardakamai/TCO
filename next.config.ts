@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
+import createMDX from '@next/mdx';
 
 const nextConfig: NextConfig = {
   output: 'standalone',
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   async redirects() {
     return [
       // Old WordPress URL redirects → new Next.js equivalents
@@ -17,4 +19,6 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+const withMDX = createMDX({});
+
+export default withMDX(nextConfig);

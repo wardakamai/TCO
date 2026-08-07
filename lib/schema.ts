@@ -25,6 +25,27 @@ export function faqPage(qa: { question: string; answer: string }[]) {
   };
 }
 
+export function article(params: {
+  headline: string;
+  description: string;
+  path: string;
+  datePublished: string;
+  image?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: params.headline,
+    description: params.description,
+    datePublished: params.datePublished,
+    dateModified: params.datePublished,
+    image: params.image ?? `${SITE_URL}/images/hero-image-tco.png`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}${params.path}` },
+    author: { '@id': `${SITE_URL}/#organization` },
+    publisher: { '@id': `${SITE_URL}/#organization` },
+  };
+}
+
 export function service(params: {
   name: string;
   description: string;
