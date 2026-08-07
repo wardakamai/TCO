@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - /bin/bash -c "source /home/toocakuj/nodevenv/toocrudeoil/20/bin/activate && cd /home/toocakuj/toocrudeoil && npm install && npm run build"
+    - /bin/bash -c "source /home/toocakuj/nodevenv/toocrudeoil/24/bin/activate && cd /home/toocakuj/toocrudeoil && npm install && npm run build"
     - /bin/bash -c "mkdir -p /home/toocakuj/toocrudeoil/.next/standalone/public && cp -R /home/toocakuj/toocrudeoil/public/. /home/toocakuj/toocrudeoil/.next/standalone/public/"
     - /bin/bash -c "mkdir -p /home/toocakuj/toocrudeoil/.next/standalone/.next/static && cp -R /home/toocakuj/toocrudeoil/.next/static/. /home/toocakuj/toocrudeoil/.next/standalone/.next/static/"
     - /bin/bash -c "mkdir -p /home/toocakuj/toocrudeoil/tmp && touch /home/toocakuj/toocrudeoil/tmp/restart.txt"
