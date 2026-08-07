@@ -19,6 +19,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/houston-crude-oil-supplier`,    lastModified: now, changeFrequency: 'monthly', priority: 0.88 },
     { url: `${base}/sgs-verification`,              lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/global-fuel-logistics`,         lastModified: now, changeFrequency: 'monthly', priority: 0.82 },
+    /* Specialist service pages */
+    { url: `${base}/services/tank-storage`,         lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${base}/services/tank-leasing`,         lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/services/terminal-operations`,  lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/services/fob-trading`,          lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${base}/services/trading-process`,      lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     /* Company pages */
     { url: `${base}/about`,                         lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/sustainability`,                lastModified: now, changeFrequency: 'monthly', priority: 0.75 },

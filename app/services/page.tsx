@@ -3,6 +3,7 @@ import Image from 'next/image';
 import PageHero from '@/components/shared/PageHero';
 import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
+import RelatedLinks from '@/components/shared/RelatedLinks';
 import { T } from '@/lib/theme';
 import { breadcrumbList, service } from '@/lib/schema';
 
@@ -117,6 +118,18 @@ export default function ServicesPage() {
           ))}
         </div>
       </section>
+
+      <RelatedLinks
+        heading="Explore Our Specialist Services"
+        links={[
+          { title: 'Tank Storage', desc: 'Bulk liquid storage agreements for crude oil and refined products at four terminals.', href: '/services/tank-storage' },
+          { title: 'Tank Leasing', desc: 'Dedicated, fixed-term tank capacity leases for traders, refiners, and governments.', href: '/services/tank-leasing' },
+          { title: 'Terminal Operations', desc: 'Berthing, cargo discharge, gauging, and jetty scheduling at our port terminals.', href: '/services/terminal-operations' },
+          { title: 'FOB Trading', desc: 'Free On Board supply — you arrange freight, we load and document the cargo.', href: '/services/fob-trading' },
+          { title: 'CIF Petroleum Supply', desc: 'Cost, Insurance & Freight delivery to any major port worldwide.', href: '/cif-petroleum-supply' },
+          { title: 'Trading Process', desc: 'How a transaction moves from inquiry and KYC through contract and delivery.', href: '/services/trading-process' },
+        ]}
+      />
 
       <CTABanner />
     </>
