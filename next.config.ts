@@ -6,10 +6,11 @@ const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   experimental: {
     // Shared hosting (CloudLinux LVE) enforces a low per-account process limit;
-    // constrain the build to one worker running as an in-process thread rather
-    // than spawning separate OS processes, to avoid EAGAIN during `next build`.
+    // capping to a single build worker avoids EAGAIN during `next build`.
+    // (workerThreads: true was also tried but breaks prerendering of Next's
+    // built-in error page under React 19 — child_process workers, capped to 1,
+    // is the stable option here.)
     cpus: 1,
-    workerThreads: true,
   },
   async redirects() {
     return [
