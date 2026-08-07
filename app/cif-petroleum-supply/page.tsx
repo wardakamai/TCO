@@ -94,8 +94,12 @@ export default function CIFPetroleumSupplyPage() {
                 <p style={{ color: T.muted, lineHeight: 1.8, fontFamily: 'DM Sans, sans-serif', fontSize: '1rem', marginBottom: '1rem' }}>
                   Our CIF petroleum supply covers all products: <strong style={{ color: T.text }}>crude oil, EN590 diesel, Jet A1, gasoline, and bunker fuel</strong>. We operate from four strategic terminals (Rotterdam, Houston, Fujairah, Jurong) to ensure shortest transit times and most competitive freight rates to any destination.
                 </p>
-                <p style={{ color: T.muted, lineHeight: 1.8, fontFamily: 'DM Sans, sans-serif', fontSize: '1rem' }}>
+                <p style={{ color: T.muted, lineHeight: 1.8, fontFamily: 'DM Sans, sans-serif', fontSize: '1rem', marginBottom: '1rem' }}>
                   Every CIF shipment is accompanied by SGS or Intertek inspection documentation and full banking-grade shipping documents, ensuring smooth letter-of-credit processing and trade finance compliance.
+                </p>
+                <p style={{ color: T.muted, lineHeight: 1.8, fontFamily: 'DM Sans, sans-serif', fontSize: '1rem' }}>
+                  If you have your own chartering capability and would prefer to arrange freight and insurance yourself, see our{' '}
+                  <Link href="/services/fob-trading" style={{ color: T.gold, fontWeight: 600 }}>FOB trading</Link> page for the alternative delivery structure.
                 </p>
               </div>
               <div style={{ background: T.warm, borderRadius: '12px', padding: '2rem', border: `1px solid ${T.border}` }}>
