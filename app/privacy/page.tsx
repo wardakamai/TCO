@@ -2,6 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHero from '@/components/shared/PageHero';
 import { T } from '@/lib/theme';
+import { breadcrumbList } from '@/lib/schema';
+
+const jsonLd = [
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Privacy Policy', path: '/privacy' },
+  ]),
+];
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -48,6 +56,8 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       <PageHero label="Legal" title="Privacy" highlight="Policy." subtitle="How Crude Oil LLP collects, uses, and protects your personal information." />
 
       <section style={{ background: T.bg, padding: '5rem 2rem 7rem' }}>

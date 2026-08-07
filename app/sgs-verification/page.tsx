@@ -4,6 +4,7 @@ import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import Link from 'next/link';
 import { T } from '@/lib/theme';
+import { breadcrumbList, faqPage, service } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'SGS Verification Process — Quality Inspection for Petroleum',
@@ -59,9 +60,25 @@ const faqs = [
   { q: 'What happens if the SGS report shows off-spec product?', a: 'If an SGS inspection at load port reveals the product is off-specification, the cargo is not loaded and the matter is resolved before shipment. Our quality control procedures at the terminal (pre-loading sampling) are designed to prevent off-spec cargoes from reaching the inspection stage.' },
 ];
 
+const jsonLd = [
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'SGS Verification', path: '/sgs-verification' },
+  ]),
+  service({
+    name: 'SGS Verification & Quality Inspection',
+    description: 'Independent SGS, Intertek, and Bureau Veritas quality inspection and trade documentation for crude oil, EN590, and Jet A1 cargoes.',
+    path: '/sgs-verification',
+    serviceType: 'Quality Inspection',
+  }),
+  faqPage(faqs.map(({ q, a }) => ({ question: q, answer: a }))),
+];
+
 export default function SGSVerificationPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       <PageHero
         label="Quality Assurance"
         title="SGS Verification"

@@ -4,6 +4,20 @@ import PageHero from '@/components/shared/PageHero';
 import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import { T } from '@/lib/theme';
+import { breadcrumbList, service } from '@/lib/schema';
+
+const jsonLd = [
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+  ]),
+  service({
+    name: 'Petroleum Trading & Logistics Services',
+    description: 'End-to-end energy services: fuel product supply, FOB terminal storage, international logistics, customised delivery, supply chain management, and quality assurance.',
+    path: '/services',
+    serviceType: 'Petroleum Trading Services',
+  }),
+];
 
 export const metadata: Metadata = {
   title: 'Our Services',
@@ -33,6 +47,8 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       <PageHero label="What We Offer" title="Comprehensive Energy" highlight="Services." subtitle="From upstream procurement in Kazakhstan to FOB delivery at four global port terminals — we manage every link in the energy supply chain." />
 
       {/* Aerial refinery image break */}

@@ -1,5 +1,13 @@
 import type { Metadata } from 'next';
 import ContactPageContent from '@/components/contact/ContactPageContent';
+import { breadcrumbList } from '@/lib/schema';
+
+const jsonLd = [
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Contact', path: '/contact' },
+  ]),
+];
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -17,5 +25,10 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return <ContactPageContent />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <ContactPageContent />
+    </>
+  );
 }

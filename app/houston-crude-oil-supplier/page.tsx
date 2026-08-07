@@ -4,6 +4,7 @@ import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import Link from 'next/link';
 import { T } from '@/lib/theme';
+import { breadcrumbList, faqPage, service } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Houston Crude Oil Supplier — FOB USGC Petroleum Export',
@@ -48,9 +49,26 @@ const faqs = [
   { q: 'What are your payment terms for FOB Houston?', a: 'Standard payment terms are confirmed, irrevocable Letter of Credit at sight (LC at Sight) from a first-class international bank. For established counterparties with 12+ months trade history, SBLC-backed open account terms may be discussed. All financial instruments are subject to buyer bank confirmation.' },
 ];
 
+const jsonLd = [
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Houston Crude Oil Supplier', path: '/houston-crude-oil-supplier' },
+  ]),
+  service({
+    name: 'Houston Crude Oil Supply',
+    description: 'FOB Houston crude oil and petroleum product export from a 1.6M m³ USGC terminal, with Aframax to VLCC vessel access.',
+    path: '/houston-crude-oil-supplier',
+    serviceType: 'Petroleum Supply',
+    areaServed: 'Houston, Texas, United States',
+  }),
+  faqPage(faqs.map(({ q, a }) => ({ question: q, answer: a }))),
+];
+
 export default function HoustonCrudeOilSupplierPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       <PageHero
         label="Houston, Texas"
         title="Houston Crude Oil"

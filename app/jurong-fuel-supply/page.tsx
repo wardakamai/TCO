@@ -4,6 +4,7 @@ import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import Link from 'next/link';
 import { T } from '@/lib/theme';
+import { breadcrumbList, faqPage, service } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Jurong Fuel Supply — Singapore Petroleum Terminal',
@@ -39,9 +40,26 @@ const faqs = [
   { q: 'Can I take delivery via tanker from Jurong?', a: 'Yes. We offer FOB, TTT (Tank-to-Tanker), TTO (Tank-to-Tank), and CIF delivery from our Jurong terminal. Buyers nominating vessels are subject to our vessel vetting procedures. Vessel acceptance is typically within 48 hours for IMO-classed tankers.' },
 ];
 
+const jsonLd = [
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Jurong Fuel Supply', path: '/jurong-fuel-supply' },
+  ]),
+  service({
+    name: 'Jurong Fuel Supply',
+    description: 'Petroleum supply from Jurong Island, Singapore, with FOB Singapore and CIF Asia delivery of EN590, Jet A1, and crude oil.',
+    path: '/jurong-fuel-supply',
+    serviceType: 'Petroleum Supply',
+    areaServed: 'Singapore',
+  }),
+  faqPage(faqs.map(({ q, a }) => ({ question: q, answer: a }))),
+];
+
 export default function JurongFuelSupplyPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       <PageHero
         label="Asia-Pacific Hub"
         title="Jurong Fuel"

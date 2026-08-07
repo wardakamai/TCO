@@ -5,6 +5,14 @@ import PageHero from '@/components/shared/PageHero';
 import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import { T } from '@/lib/theme';
+import { breadcrumbList } from '@/lib/schema';
+
+const jsonLd = [
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Terminal Network', path: '/storage' },
+  ]),
+];
 
 export const metadata: Metadata = {
   title: 'Terminal Network',
@@ -32,6 +40,8 @@ const terminals = [
 export default function StoragePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       <PageHero label="Terminal Network" title="Four Ports." highlight="One Trusted Partner." subtitle="We hold strategic FOB positions at four of the world's most important energy trading hubs — providing global reach with local terminal expertise." />
 
       {/* FOB explanation */}

@@ -4,6 +4,7 @@ import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import Link from 'next/link';
 import { T } from '@/lib/theme';
+import { breadcrumbList, faqPage, service } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'CIF Petroleum Supply — CIF Crude Oil & Fuel Delivery Worldwide',
@@ -49,9 +50,25 @@ const faqs = [
   { q: 'What documentation comes with a CIF cargo?', a: 'Standard CIF documentation includes: Original Bill of Lading (3/3), Commercial Invoice, Certificate of Quality (SGS/Intertek), Certificate of Quantity, Certificate of Origin, Insurance Certificate, Packing List, and Health Certificate where applicable. Additional documents can be provided per buyer bank requirements.' },
 ];
 
+const jsonLd = [
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'CIF Petroleum Supply', path: '/cif-petroleum-supply' },
+  ]),
+  service({
+    name: 'CIF Petroleum Supply',
+    description: 'Cost, Insurance & Freight delivery of crude oil, EN590 diesel, Jet A1, and bunker fuel to any major port worldwide, with SGS verification.',
+    path: '/cif-petroleum-supply',
+    serviceType: 'CIF Petroleum Supply',
+  }),
+  faqPage(faqs.map(({ q, a }) => ({ question: q, answer: a }))),
+];
+
 export default function CIFPetroleumSupplyPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       <PageHero
         label="CIF Delivery"
         title="CIF Petroleum"

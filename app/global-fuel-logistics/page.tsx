@@ -4,6 +4,7 @@ import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import Link from 'next/link';
 import { T } from '@/lib/theme';
+import { breadcrumbList, faqPage, service } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Global Fuel Logistics — Petroleum Transport & Supply Chain',
@@ -51,9 +52,25 @@ const faqs = [
   { q: 'Can you arrange freight for buyer-nominated cargoes?', a: 'Yes. For buyers under FOB terms who want our help arranging freight, we offer freight-only brokerage services on a commission basis. Alternatively, we can provide FOB-plus-freight quotes, effectively offering an equivalent CIF price without formal Incoterms change, allowing buyers to benefit from our freight relationships while maintaining their preferred trade terms.' },
 ];
 
+const jsonLd = [
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Global Fuel Logistics', path: '/global-fuel-logistics' },
+  ]),
+  service({
+    name: 'Global Fuel Logistics',
+    description: 'End-to-end petroleum logistics — freight, insurance, customs, documentation, and multimodal delivery from Rotterdam, Houston, Fujairah, and Singapore to any world port.',
+    path: '/global-fuel-logistics',
+    serviceType: 'Petroleum Logistics',
+  }),
+  faqPage(faqs.map(({ q, a }) => ({ question: q, answer: a }))),
+];
+
 export default function GlobalFuelLogisticsPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       <PageHero
         label="Supply Chain"
         title="Global Fuel"

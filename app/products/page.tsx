@@ -1,5 +1,13 @@
 import type { Metadata } from 'next';
 import ProductsPageClient from '@/components/products/ProductsPageClient';
+import { breadcrumbList } from '@/lib/schema';
+
+const jsonLd = [
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Products', path: '/products' },
+  ]),
+];
 
 export const metadata: Metadata = {
   title: 'Products',
@@ -18,5 +26,10 @@ export const metadata: Metadata = {
 };
 
 export default function ProductsPage() {
-  return <ProductsPageClient />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <ProductsPageClient />
+    </>
+  );
 }

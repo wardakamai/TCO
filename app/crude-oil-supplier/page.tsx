@@ -4,6 +4,7 @@ import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import Link from 'next/link';
 import { T } from '@/lib/theme';
+import { breadcrumbList, faqPage } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Crude Oil Supplier — REBCO & Global Crude Oil Export',
@@ -45,19 +46,26 @@ const faqs = [
   { q: 'Do you provide allocation letters and BCL?', a: 'Yes. Upon successful KYC and contract execution, we provide formal allocation letters from terminal management and can arrange Bank Comfort Letters (BCL) / Bank Capability Letters as required for the buyer\'s financial procedures.' },
 ];
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  name: 'REBCO Crude Oil — Russian Export Blend',
-  description: 'REBCO crude oil supplied by Crude Oil LLP on FOB and CIF terms from Houston, Rotterdam, and Fujairah. Platts Urals pricing, SGS inspected.',
-  brand: { '@type': 'Brand', name: 'Crude Oil LLP' },
-  offers: {
-    '@type': 'Offer',
-    seller: { '@type': 'Organization', name: 'Crude Oil LLP', url: 'https://www.toocrudeoil.com' },
-    areaServed: 'Worldwide',
-    priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'USD', description: 'Price per barrel based on Platts Urals differential or Dated Brent basis' },
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'REBCO Crude Oil — Russian Export Blend',
+    description: 'REBCO crude oil supplied by Crude Oil LLP on FOB and CIF terms from Houston, Rotterdam, and Fujairah. Platts Urals pricing, SGS inspected.',
+    brand: { '@type': 'Brand', name: 'Crude Oil LLP' },
+    offers: {
+      '@type': 'Offer',
+      seller: { '@type': 'Organization', name: 'Crude Oil LLP', url: 'https://www.toocrudeoil.com' },
+      areaServed: 'Worldwide',
+      priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'USD', description: 'Price per barrel based on Platts Urals differential or Dated Brent basis' },
+    },
   },
-};
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Crude Oil Supplier', path: '/crude-oil-supplier' },
+  ]),
+  faqPage(faqs.map(({ q, a }) => ({ question: q, answer: a }))),
+];
 
 export default function CrudeOilSupplierPage() {
   return (

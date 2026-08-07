@@ -5,6 +5,14 @@ import PageHero from '@/components/shared/PageHero';
 import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import { T } from '@/lib/theme';
+import { breadcrumbList } from '@/lib/schema';
+
+const jsonLd = [
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Sustainability & HSE', path: '/sustainability' },
+  ]),
+];
 
 export const metadata: Metadata = {
   title: 'Sustainability & HSE',
@@ -39,6 +47,8 @@ const commitments = [
 export default function SustainabilityPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       <PageHero label="Sustainability & HSE" title="Energy Today." highlight="Planet Tomorrow." subtitle="Our commitment to responsible energy trading means embedding health, safety, environmental, and quality standards into every decision we make." />
 
       {/* Policy statement — full-bleed dramatic background */}

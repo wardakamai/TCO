@@ -4,6 +4,7 @@ import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import Link from 'next/link';
 import { T } from '@/lib/theme';
+import { breadcrumbList, faqPage, service } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Rotterdam Fuel Allocation — FOB Rotterdam EN590, Jet A1 & Crude',
@@ -47,9 +48,26 @@ const faqs = [
   { q: 'How quickly can a cargo be loaded at Rotterdam?', a: 'For allocated cargoes, loading can typically commence within 7–14 days of contract execution, subject to laycan agreement and vessel nomination. Term contract buyers with established liftings can be scheduled on monthly or bi-monthly cycles.' },
 ];
 
+const jsonLd = [
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Rotterdam Fuel Allocation', path: '/rotterdam-fuel-allocation' },
+  ]),
+  service({
+    name: 'Rotterdam Fuel Allocation',
+    description: 'Direct FOB fuel allocation at Rotterdam ARA terminals for EN590 diesel, Jet A1, crude oil, and gasoline.',
+    path: '/rotterdam-fuel-allocation',
+    serviceType: 'Petroleum Supply',
+    areaServed: 'Rotterdam, Netherlands',
+  }),
+  faqPage(faqs.map(({ q, a }) => ({ question: q, answer: a }))),
+];
+
 export default function RotterdamFuelAllocationPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       <PageHero
         label="ARA Terminal Network"
         title="Rotterdam Fuel"

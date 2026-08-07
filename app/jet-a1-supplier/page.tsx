@@ -4,6 +4,7 @@ import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import Link from 'next/link';
 import { T } from '@/lib/theme';
+import { breadcrumbList, faqPage } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Jet A1 Supplier — Aviation Fuel CIF & FOB',
@@ -50,19 +51,26 @@ const faqs = [
   { q: 'Is the fuel approved by IATA?', a: 'Yes. Our Jet A1 is sourced from IATA-approved refineries and terminals. All cargoes comply with IATA Guidance Material for Aviation Turbine Fuels and carry full documentation including Certificate of Quality, origin certificates, and independent inspection reports.' },
 ];
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  name: 'Jet Fuel A1 — Aviation Turbine Fuel',
-  description: 'Jet A1 aviation fuel (ASTM D1655 / DEF STAN 91-091) supplied by Crude Oil LLP on CIF and FOB terms from Fujairah, Rotterdam, and Houston.',
-  brand: { '@type': 'Brand', name: 'Crude Oil LLP' },
-  offers: {
-    '@type': 'Offer',
-    seller: { '@type': 'Organization', name: 'Crude Oil LLP', url: 'https://www.toocrudeoil.com' },
-    areaServed: 'Worldwide',
-    priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'USD', description: 'Price per metric tonne based on Platts Jet CIF NWE or FOB Rotterdam assessments' },
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Jet Fuel A1 — Aviation Turbine Fuel',
+    description: 'Jet A1 aviation fuel (ASTM D1655 / DEF STAN 91-091) supplied by Crude Oil LLP on CIF and FOB terms from Fujairah, Rotterdam, and Houston.',
+    brand: { '@type': 'Brand', name: 'Crude Oil LLP' },
+    offers: {
+      '@type': 'Offer',
+      seller: { '@type': 'Organization', name: 'Crude Oil LLP', url: 'https://www.toocrudeoil.com' },
+      areaServed: 'Worldwide',
+      priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'USD', description: 'Price per metric tonne based on Platts Jet CIF NWE or FOB Rotterdam assessments' },
+    },
   },
-};
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Jet A1 Supplier', path: '/jet-a1-supplier' },
+  ]),
+  faqPage(faqs.map(({ q, a }) => ({ question: q, answer: a }))),
+];
 
 export default function JetA1SupplierPage() {
   return (

@@ -4,6 +4,7 @@ import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import Link from 'next/link';
 import { T } from '@/lib/theme';
+import { breadcrumbList, faqPage, service } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Fujairah Jet Fuel Supplier — Jet A1 CIF & Fuel Storage UAE',
@@ -49,9 +50,26 @@ const faqs = [
   { q: 'Do you offer storage rental at Fujairah?', a: 'Yes. Beyond supply, we offer petroleum product storage at Fujairah terminal on a rental basis for buyers who require their own in-tank position in the UAE. Storage rental is subject to availability and minimum volume commitments. Contact our operations team for current availability and rates.' },
 ];
 
+const jsonLd = [
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Fujairah Jet Fuel Supplier', path: '/fujairah-jet-fuel-supplier' },
+  ]),
+  service({
+    name: 'Fujairah Jet Fuel Supply',
+    description: 'Jet A1 and petroleum fuel supply from Fujairah, UAE, with CIF delivery to Asia, Africa, and the Middle East.',
+    path: '/fujairah-jet-fuel-supplier',
+    serviceType: 'Petroleum Supply',
+    areaServed: 'Fujairah, United Arab Emirates',
+  }),
+  faqPage(faqs.map(({ q, a }) => ({ question: q, answer: a }))),
+];
+
 export default function FujairahJetFuelSupplierPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       <PageHero
         label="Fujairah, UAE"
         title="Fujairah Fuel"

@@ -4,6 +4,14 @@ import PageHero from '@/components/shared/PageHero';
 import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import { T } from '@/lib/theme';
+import { breadcrumbList } from '@/lib/schema';
+
+const jsonLd = [
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about' },
+  ]),
+];
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -49,6 +57,8 @@ function Label({ text }: { text: string }) {
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       <PageHero label="About Crude Oil LLP" title="Built on Expertise," highlight="Driven by Energy." subtitle="Since 2007, we've grown from a Kazakhstan-based supplier into a global FOB trading partner at four of the world's most strategic port terminals." />
 
       {/* Story */}
