@@ -8,10 +8,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import PageHero from '@/components/shared/PageHero';
 import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
+import { T } from '@/lib/theme';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const T = { text: '#19140D', muted: '#8A7A65', sub: '#4A3C2A', border: '#E3D9C8', warm: '#F4EDE0', surface: '#FFFFFF', bg: '#FAF8F4', gold: '#B8860B' };
 
 const products = [
   { tag: 'CRUDE OIL', name: 'REBCO Crude Oil', spec: 'Russian Export Blend Crude Oil', details: ['API Gravity: 31–33°', 'Sulphur: 1.2–1.5%', 'Density: 860–875 kg/m³', 'Origin: Kazakhstan / Russia'], desc: 'REBCO (Russian Export Blend Crude Oil) is a medium gravity, high-sulphur crude exported via the Druzhba pipeline system. Widely traded on international markets and priced against Brent benchmark.', avail: 64, ports: ['Rotterdam', 'Fujairah'] },

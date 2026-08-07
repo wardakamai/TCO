@@ -3,9 +3,10 @@ import PageHero from '@/components/shared/PageHero';
 import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import Link from 'next/link';
+import { T } from '@/lib/theme';
 
 export const metadata: Metadata = {
-  title: 'Fujairah Jet Fuel Supplier — Jet A1 CIF & Fuel Storage UAE | TOO Crude Oil',
+  title: 'Fujairah Jet Fuel Supplier — Jet A1 CIF & Fuel Storage UAE',
   description:
     'TOO Crude Oil is a verified Jet A1 and petroleum fuel supplier at Fujairah, UAE. CIF Jet A1 delivery to Asia, Africa, and the Middle East. 1.4M m³ Fujairah fuel storage with direct terminal access.',
   keywords: [
@@ -23,8 +24,6 @@ export const metadata: Metadata = {
     images: [{ url: '/images/hero-image-tco.png', width: 1200, height: 630, alt: 'Fujairah Jet Fuel Supplier — TOO Crude Oil' }],
   },
 };
-
-const T = { text: '#19140D', muted: '#8A7A65', sub: '#4A3C2A', border: '#E3D9C8', warm: '#F4EDE0', surface: '#FFFFFF', gold: '#B8860B' };
 
 const products = [
   { product: 'Jet Fuel A1', spec: 'ASTM D1655 / DEF STAN 91-091', delivery: 'CIF / FOB', notes: 'Primary Fujairah aviation fuel product. Fast loading for MENA and Asia routes.' },

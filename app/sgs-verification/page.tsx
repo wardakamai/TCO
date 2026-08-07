@@ -3,9 +3,10 @@ import PageHero from '@/components/shared/PageHero';
 import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import Link from 'next/link';
+import { T } from '@/lib/theme';
 
 export const metadata: Metadata = {
-  title: 'SGS Verification Process — Quality Inspection for Petroleum | TOO Crude Oil',
+  title: 'SGS Verification Process — Quality Inspection for Petroleum',
   description:
     'All TOO Crude Oil petroleum products are independently verified by SGS, Intertek, or Bureau Veritas. Learn about our SGS inspection process, product quality certification, and trade documentation for crude oil, EN590, and Jet A1.',
   keywords: [
@@ -22,8 +23,6 @@ export const metadata: Metadata = {
     images: [{ url: '/images/hero-image-tco.png', width: 1200, height: 630, alt: 'SGS Verification — TOO Crude Oil' }],
   },
 };
-
-const T = { text: '#19140D', muted: '#8A7A65', sub: '#4A3C2A', border: '#E3D9C8', warm: '#F4EDE0', surface: '#FFFFFF', gold: '#B8860B' };
 
 const process = [
   { step: '01', title: 'Pre-Shipment Sampling', desc: 'Representative samples are drawn from the storage tank or vessel at load port by an SGS-certified sampling technician, following ISO 3170 procedures for liquid petroleum.' },

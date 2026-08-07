@@ -4,6 +4,7 @@ import Image from 'next/image';
 import PageHero from '@/components/shared/PageHero';
 import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
+import { T } from '@/lib/theme';
 
 export const metadata: Metadata = {
   title: 'Terminal Network',
@@ -20,8 +21,6 @@ export const metadata: Metadata = {
     description: 'Strategic FOB positions at four global energy hubs. 7M+ m³ combined storage capacity across Europe, Americas, Asia-Pacific and Middle East.',
   },
 };
-
-const T = { text: '#19140D', muted: '#8A7A65', sub: '#4A3C2A', border: '#E3D9C8', warm: '#F4EDE0', surface: '#FFFFFF', bg: '#FAF8F4', gold: '#B8860B' };
 
 const terminals = [
   { flag: '🇳🇱', city: 'Rotterdam', country: 'Netherlands', region: 'Northwest Europe', coords: 'Maasvlakte, Rotterdam', desc: "Rotterdam is Europe's largest seaport and the world's foremost oil trading hub. Our FOB position provides access to the ARA (Amsterdam-Rotterdam-Antwerp) trading hub, with direct pipeline connections to refineries across the European network.", capacity: '2.8 million m³', products: ['REBCO Crude Oil', 'Diesel EN590', 'Jet Fuel A1', 'Gasoline', 'Bunker IFO 180/380'], stats: [{ label: 'Storage Capacity', value: '2.8M m³' }, { label: 'Annual Throughput', value: '18M+ tonnes' }, { label: 'Tank Count', value: '120+ tanks' }, { label: 'Marine Berths', value: '8 dedicated' }], image: '/images/terminal-aerial.jpeg' },

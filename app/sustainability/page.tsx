@@ -4,6 +4,7 @@ import Image from 'next/image';
 import PageHero from '@/components/shared/PageHero';
 import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
+import { T } from '@/lib/theme';
 
 export const metadata: Metadata = {
   title: 'Sustainability & HSE',
@@ -20,8 +21,6 @@ export const metadata: Metadata = {
     description: 'Zero-harm safety culture, 30% emissions reduction target by 2030, and $2M+ community investment. Responsible energy trading from Kazakhstan to the world.',
   },
 };
-
-const T = { text: '#19140D', muted: '#8A7A65', sub: '#4A3C2A', border: '#E3D9C8', warm: '#F4EDE0', surface: '#FFFFFF', bg: '#FAF8F4', gold: '#B8860B' };
 
 const hsePillars = [
   { icon: '❤️', title: 'Health', desc: 'Protecting the physical and mental wellbeing of all employees, contractors, and communities associated with our operations.', points: ['Occupational health programmes', 'Mental health & wellbeing support', 'Regular health surveillance audits', 'Emergency medical preparedness'] },

@@ -3,8 +3,7 @@
 import { useState } from 'react';
 import PageHero from '@/components/shared/PageHero';
 import SectionReveal from '@/components/shared/SectionReveal';
-
-const T = { text: '#19140D', muted: '#8A7A65', sub: '#4A3C2A', border: '#E3D9C8', warm: '#F4EDE0', surface: '#FFFFFF', bg: '#FAF8F4', gold: '#B8860B', ink: '#19140D' };
+import { T } from '@/lib/theme';
 
 const products = ['REBCO Crude Oil', 'Diesel Fuel EN590', 'Aviation Jet Fuel A1', 'LNG', 'Gasoline RON 92/95', 'Bunker Fuel IFO 180/380', 'Multiple Products', 'Other / General Enquiry'];
 

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import PageHero from '@/components/shared/PageHero';
 import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
+import { T } from '@/lib/theme';
 
 export const metadata: Metadata = {
   title: 'Our Services',
@@ -19,8 +20,6 @@ export const metadata: Metadata = {
     description: 'Comprehensive energy services from Kazakhstan to global markets: fuel supply, FOB terminal operations, logistics, and quality assurance.',
   },
 };
-
-const T = { text: '#19140D', muted: '#8A7A65', sub: '#4A3C2A', border: '#E3D9C8', warm: '#F4EDE0', surface: '#FFFFFF', bg: '#FAF8F4', gold: '#B8860B' };
 
 const services = [
   { tag: '01', title: 'Fuel Product Supply', desc: 'We supply a full range of crude oil and refined petroleum products — REBCO, Diesel EN590, Aviation Jet Fuel A1, LNG, and Gasoline. Our flexible FOB trading model allows clients to take delivery at any of our four strategic port terminals, or arrange onward shipment to their preferred destination.', points: ['REBCO Crude Oil (Russian Export Blend)', 'Diesel Fuel EN590 (10PPM Sulphur)', 'Jet Fuel A1 (ASTM D1655)', 'LNG & Gasoline RON 92/95'] },

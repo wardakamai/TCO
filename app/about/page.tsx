@@ -3,6 +3,7 @@ import Image from 'next/image';
 import PageHero from '@/components/shared/PageHero';
 import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
+import { T } from '@/lib/theme';
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -19,8 +20,6 @@ export const metadata: Metadata = {
     description: 'Founded in Almaty, Kazakhstan in 2007. From domestic supplier to international FOB trading partner at Rotterdam, Houston, Jurong and Fujairah.',
   },
 };
-
-const T = { text: '#19140D', muted: '#8A7A65', sub: '#4A3C2A', border: '#E3D9C8', warm: '#F4EDE0', surface: '#FFFFFF', gold: '#B8860B' };
 
 const timeline = [
   { year: '2007', event: 'Company Founded', detail: 'Crude Oil LLP established in Almaty, Kazakhstan — beginning domestic oil product supply.' },

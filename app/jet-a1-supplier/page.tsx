@@ -3,9 +3,10 @@ import PageHero from '@/components/shared/PageHero';
 import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import Link from 'next/link';
+import { T } from '@/lib/theme';
 
 export const metadata: Metadata = {
-  title: 'Jet A1 Supplier — Aviation Fuel CIF & FOB | TOO Crude Oil',
+  title: 'Jet A1 Supplier — Aviation Fuel CIF & FOB',
   description:
     'TOO Crude Oil supplies Jet Fuel A1 (ASTM D1655 / DEF STAN 91-091) on CIF and FOB terms from Fujairah and Rotterdam. Verified aviation fuel exporter for airlines, into-plane operators, and fuel management companies worldwide.',
   keywords: [
@@ -23,8 +24,6 @@ export const metadata: Metadata = {
     images: [{ url: '/images/hero-image-tco.png', width: 1200, height: 630, alt: 'Jet A1 Aviation Fuel Supplier — TOO Crude Oil' }],
   },
 };
-
-const T = { text: '#19140D', muted: '#8A7A65', sub: '#4A3C2A', border: '#E3D9C8', warm: '#F4EDE0', surface: '#FFFFFF', gold: '#B8860B' };
 
 const specs = [
   { property: 'Specification', value: 'ASTM D1655 / DEF STAN 91-091' },

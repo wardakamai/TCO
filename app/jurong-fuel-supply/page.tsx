@@ -3,9 +3,10 @@ import PageHero from '@/components/shared/PageHero';
 import SectionReveal from '@/components/shared/SectionReveal';
 import CTABanner from '@/components/home/CTABanner';
 import Link from 'next/link';
+import { T } from '@/lib/theme';
 
 export const metadata: Metadata = {
-  title: 'Jurong Fuel Supply — Singapore Petroleum Terminal | TOO Crude Oil',
+  title: 'Jurong Fuel Supply — Singapore Petroleum Terminal',
   description:
     'TOO Crude Oil operates from Jurong Island, Singapore — supplying EN590 diesel, Jet A1, crude oil, and bunker fuel to Asia-Pacific buyers. 1.2M m³ Jurong storage with FOB Singapore and CIF Asia delivery.',
   keywords: [
@@ -23,8 +24,6 @@ export const metadata: Metadata = {
     images: [{ url: '/images/hero-image-tco.png', width: 1200, height: 630, alt: 'Jurong Fuel Supply Singapore — TOO Crude Oil' }],
   },
 };
-
-const T = { text: '#19140D', muted: '#8A7A65', sub: '#4A3C2A', border: '#E3D9C8', warm: '#F4EDE0', surface: '#FFFFFF', gold: '#B8860B' };
 
 const markets = [
   { market: 'China & North Asia', desc: 'CIF delivery to Shanghai, Ningbo, Tianjin, Busan (Korea), and Tokyo Bay. Jurong\'s proximity provides 7–14 day transits to China\'s major petroleum import ports.' },

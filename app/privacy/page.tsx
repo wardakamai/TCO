@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHero from '@/components/shared/PageHero';
+import { T } from '@/lib/theme';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -8,8 +9,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.toocrudeoil.com/privacy' },
   robots: { index: false, follow: false },
 };
-
-const T = { text: '#19140D', muted: '#8A7A65', sub: '#4A3C2A', border: '#E3D9C8', warm: '#F4EDE0', bg: '#FAF8F4', gold: '#B8860B' };
 
 const sections = [
   {
